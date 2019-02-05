@@ -2,6 +2,8 @@
 
 Provides an easy to use client for [fixer.io](https://fixer.io) exchange rates and currency conversion JSON API.
 
+*Looking for a Laravel package? Please use [ranium/laravel-fixerio](https://github.com/ranium/laravel-fixerio) instead of this library.*
+
 ## Installation
 
 This project can be installed using Composer:
