@@ -1,0 +1,22 @@
+{
+    "name": "ranium/fixerio-php-client",
+    "description": "A PHP client for fixer.io foreign exchange rates and currency conversion API.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abbas Ali",
+            "email": "abbas@ranium.in"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/guzzle-services": "*"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Ranium\\Fixerio\\": "src"
+        }
+    }
+}

@@ -1,0 +1,182 @@
+{
+    "name": "Fixerio",
+    "apiVersion": "2019-02-04",
+    "description": "A foreign exchanges rates and currency conversion JSON API.",
+    "operations": {
+        "latest": {
+            "httpMethod": "GET",
+            "uri": "/api/latest",
+            "summary": "Gets real-time exchange rate data",
+            "responseModel": "FixerioResponse",
+            "parameters": {
+                "access_key": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "base": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "symbols": {
+                    "location": "query",
+                    "type": "string"
+                }
+            }
+        },
+        "historical": {
+            "httpMethod": "GET",
+            "uri": "/api/{date}",
+            "summary": "Gets historical exchange rate data",
+            "responseModel": "FixerioResponse",
+            "parameters": {
+                "access_key": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "date": {
+                    "location": "uri",
+                    "type": "string",
+                    "required": true
+                },
+                "base": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "symbols": {
+                    "location": "query",
+                    "type": "string"
+                }
+            }
+        },
+        "convert": {
+            "httpMethod": "GET",
+            "uri": "/api/convert",
+            "summary": "Convert any amount from one currency to another",
+            "responseModel": "FixerioResponse",
+            "parameters": {
+                "access_key": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "from": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "to": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "amount": {
+                    "location": "query",
+                    "type": "numeric",
+                    "required": true
+                },
+                "date": {
+                    "location": "query",
+                    "type": "string"
+                }
+            }
+        },
+        "timeseries": {
+            "httpMethod": "GET",
+            "uri": "/api/timeseries",
+            "summary": "Get daily historical rates between two dates",
+            "responseModel": "FixerioResponse",
+            "parameters": {
+                "access_key": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "start_date": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "end_date": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "base": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "symbols": {
+                    "location": "query",
+                    "type": "string"
+                }
+            }
+        },
+        "fluctuation": {
+            "httpMethod": "GET",
+            "uri": "/api/fluctuation",
+            "summary": "Get currency fluctuation on a day-to-day basis",
+            "responseModel": "FixerioResponse",
+            "parameters": {
+                "access_key": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "start_date": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "end_date": {
+                    "location": "query",
+                    "type": "string",
+                    "required": true
+                },
+                "base": {
+                    "location": "query",
+                    "type": "string"
+                },
+                "symbols": {
+                    "location": "query",
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "models": {
+        "FixerioResponse": {
+            "type": "object",
+            "properties": {
+                "success": {
+                    "type": "string",
+                    "required": true
+                },
+                "errors": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "integer",
+                                "description": "The error code."
+                            },
+                            "type": {
+                                "type": "string",
+                                "description": "The type of error."
+                            },
+                            "info": {
+                                "type": "string",
+                                "description": "The detailed message from the server."
+                            }
+                        }
+                    }
+                }
+            },
+            "additionalProperties": {
+                "location": "json"
+            }
+        }
+    }
+}
