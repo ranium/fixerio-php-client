@@ -1,3 +1,18 @@
+<p align="center">
+    <a href="https://github.com/ranium/fixerio-php-client/actions">
+        <img src="https://github.com/ranium/fixerio-php-client/workflows/tests/badge.svg" alt="Build Status">
+    </a>
+    <a href="https://packagist.org/packages/ranium/fixerio-php-client">
+        <img src="https://img.shields.io/packagist/dt/ranium/fixerio-php-client" alt="Total Downloads">
+    </a>
+    <a href="https://packagist.org/packages/ranium/fixerio-php-client">
+        <img src="https://img.shields.io/packagist/v/ranium/fixerio-php-client" alt="Latest Stable Version">
+    </a>
+    <a href="https://packagist.org/packages/ranium/fixerio-php-client">
+        <img src="https://img.shields.io/packagist/l/ranium/fixerio-php-client" alt="License">
+    </a>
+</p>
+
 # Fixer.io PHP Client
 
 Provides an easy to use client for [fixer.io](https://fixer.io) exchange rates and currency conversion JSON API.
